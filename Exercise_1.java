@@ -1,3 +1,10 @@
+/*
+Time complexity : O(1)
+Space complexity : O(MAX) - Size of the array
+Did this code successfully run on Leetcode : Yes (on GFG)
+Any problem you faced while coding this : Initially I took the top as 0 which gave errors
+*/ 
+
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
