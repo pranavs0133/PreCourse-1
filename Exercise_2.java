@@ -6,7 +6,7 @@ Any problem you faced while coding this : No
 */ 
 
 
-public class StackAsLinkedList { 
+public class Exercise_2 { 
   
     StackNode root; 
   
@@ -77,7 +77,7 @@ public class StackAsLinkedList {
     public static void main(String[] args) 
     { 
   
-        StackAsLinkedList sll = new StackAsLinkedList(); 
+        Exercise_2 sll = new Exercise_2(); 
   
         sll.push(10); 
         sll.push(20); 
