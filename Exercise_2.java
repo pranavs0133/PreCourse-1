@@ -1,6 +1,6 @@
 /*
 Time complexity : O(1)
-Space complexity : O(1) - Size of the array
+Space complexity : O(N) 
 Did this code successfully run on Leetcode : Yes (on GFG)
 Any problem you faced while coding this : No
 */ 
@@ -26,7 +26,7 @@ public class Exercise_2 {
     public boolean isEmpty() 
     { 
         //Write your code here for the condition if stack is empty. 
-        if(root.next == null) {
+        if(root == null) {
             return true;
         } else {
             return false;
@@ -36,15 +36,13 @@ public class Exercise_2 {
     public void push(int data) 
     { 
         //Write code to push data to the stack. 
-        if(root == null || root.next == null) {
-            StackNode newNode = new StackNode(data);
-            root = new StackNode(-1);
-            root.next = newNode;
+        if(root == null) {
+            root = new StackNode(data);
             return;
         } else {
             StackNode newNode = new StackNode(data);
-            newNode.next = root.next;
-            root.next = newNode;
+            newNode.next = root;
+            root = newNode;
         }
     } 
   
@@ -53,24 +51,24 @@ public class Exercise_2 {
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
 	//Also return the popped element 
-        if(root == null || root.next == null) {
+        if(root == null) {
             System.out.println("Stack Underflow");
             return 0;
         }
 
-        StackNode currNode = root.next;
-        root.next = currNode.next;
-        return currNode.data;
+        StackNode  removeNode = root;
+        root = removeNode.next;
+        return removeNode.data;
     } 
   
     public int peek() 
     { 
         //Write code to just return the topmost element without removing it.
-        if(root == null || root.next == null) {
+        if(root == null) {
             return -1;
         }
 
-        return root.next.data;
+        return root.data;
     } 
   
 	//Driver code
@@ -88,6 +86,13 @@ public class Exercise_2 {
         System.out.println("Top element is " + sll.peek()); 
 
         System.out.println(sll.pop() + " popped from stack"); 
+
+        System.out.println("Top element is " + sll.peek()); 
+
+        System.out.println(sll.pop() + " popped from stack"); 
+
+        
+        System.out.println("Top element is " + sll.peek()); 
 
     } 
 } 
